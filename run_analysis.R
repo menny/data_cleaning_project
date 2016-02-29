@@ -67,4 +67,6 @@ library(reshape)
 
 melted_data_frame <- melt(required_data_frame, id=c("subject", "activity_label"))
 average_activity_values_data_frame <- cast(melted_data_frame, subject+activity_label~variable, mean)
+
+write.table(average_activity_values_data_frame, file = "tidy.txt", row.names = FALSE)
 #(END OF REQUIREMENT 5)
